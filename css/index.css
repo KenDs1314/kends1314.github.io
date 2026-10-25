@@ -19,29 +19,33 @@
 html {
   interpolate-size: allow-keywords;
   scroll-behavior: smooth;
+  /* El fondo se pinta en el canvas del documento con attachment fijo:
+     Chrome Android lo dibuja en el espacio de la pantalla, así que no se
+     desplaza ni se reescala cuando la barra de direcciones aparece/desaparece
+     (una capa position: fixed sí lo hace, porque Chrome la anima con la barra). */
+  background: var(--negro) url('../fotos/fondo.png') center center / cover no-repeat fixed;
 }
 
 body {
   margin: 0;
-  background-color: var(--negro);
+  /* Transparente a propósito: cualquier color aquí taparía el canvas de html,
+     que es donde vive la imagen de fondo. */
+  background: transparent;
   color: var(--plata);
   font-family: 'Courier New', monospace;
 }
 
-/* Fondo fijo: no debe desplazarse ni "saltar" al hacer scroll.
-   - inset: 0 en vez de 100vh/lvh (al ocultarse la barra del navegador
-     el alto del viewport cambia y la imagen se reescalaba en marcha).
-   - Capa propia de composición para que no se repinte con retraso. */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  background: var(--negro) url('../fotos/fondo.png') center center / cover no-repeat;
-  pointer-events: none;
-  transform: translateZ(0);
-  will-change: transform;
-  backface-visibility: hidden;
+/* iOS Safari ignora background-attachment: fixed (lo trata como scroll),
+   así que ahí sí usamos una capa fija como respaldo. */
+@supports (-webkit-touch-callout: none) {
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background: var(--negro) url('../fotos/fondo.png') center center / cover no-repeat;
+    pointer-events: none;
+  }
 }
 
 header { padding: 16px; }
