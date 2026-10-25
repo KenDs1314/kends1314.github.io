@@ -42,7 +42,6 @@ body::before {
   transform: translateZ(0);
   will-change: transform;
   backface-visibility: hidden;
-  contain: strict;
 }
 
 header { padding: 16px; }
