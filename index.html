@@ -14,103 +14,105 @@
   <div id="crt" aria-hidden="true"><div class="crt-pantalla"></div></div>
   <noscript><style>#crt { display: none; }</style></noscript>
 
-  <header>
-    <article class="vlog">
-      <div class="vlog-barra">
-        <span class="rec">REC</span>
-        <span>#001</span>
-        <span id="tiempo">00:00:00</span>
-      </div>
+  <main class="contenido">
+    <header>
+      <article class="vlog">
+        <div class="vlog-barra">
+          <span class="rec">REC</span>
+          <span>#001</span>
+          <span id="tiempo">00:00:00</span>
+        </div>
 
-      <h1>KENDS WEB</h1>
-      <p class="lema">Pequeña web para mis cosas de programación, guías y proyectos varios que haga con el tiempo ✦</p>
+        <h1>KENDS WEB</h1>
+        <p class="lema">Pequeña web para mis cosas de programación, guías y proyectos varios que haga con el tiempo ✦</p>
 
-      <nav>
-        <a href="#comentarios">[ comentarios ]</a>
-        <a href="#proyectos">[ proyectos ]</a>
-        <a href="#guias">[ guías ]</a>
+        <nav>
+          <a href="#comentarios">[ comentarios ]</a>
+          <a href="#proyectos">[ proyectos ]</a>
+          <a href="#guias">[ guías ]</a>
+        </nav>
+      </article>
+    </header>
+
+    <section id="comentarios" class="panel">
+      <h2>Comentarios</h2>
+      <script src="https://giscus.app/client.js"
+        data-repo="KENDS1314/kends1314.github.io"
+        data-repo-id="R_kgDOVVO8qg"
+        data-category="General"
+        data-category-id="DIC_kwDOVVO8qs4DJd19"
+        data-mapping="pathname"
+        data-reactions-enabled="1"
+        data-input-position="top"
+        data-theme="transparent_dark"
+        data-lang="es"
+        crossorigin="anonymous"
+        async>
+      </script>
+    </section>
+
+    <section id="proyectos" class="panel">
+      <h2>Proyectos</h2>
+      <ul>
+        <li class="ep">
+          <div class="ep-cinta">
+            <span class="ep-num">EP.01</span>
+            <span>[web]</span>
+            <span class="ep-estado">en edición</span>
+          </div>
+          <a href="https://github.com/KENDS1314/nombre-repo">proyecto 1</a>
+          <p>pssss no leas aqui todavia </p>
+        </li>
+        <li class="ep">
+          <div class="ep-cinta">
+            <span class="ep-num">EP.02</span>
+            <span>[software]</span>
+            <span class="ep-estado">próximamente</span>
+          </div>
+          <a href="#proyectos">Otro proyecto</a>
+          <p>te dije que no msh</p>
+        </li>
+      </ul>
+    </section>
+
+    <section id="guias" class="panel">
+      <h2>Guías</h2>
+
+      <details>
+        <summary>Titulo de guia</summary>
+        <ol>
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+        </ol>
+      </details>
+
+      <details>
+        <summary>Título de otra guía</summary>
+        <ol>
+          <li>Paso uno.</li>
+          <li>Paso dos.</li>
+          <li>Paso tres.</li>
+        </ol>
+      </details>
+    </section>
+
+    <footer class="redes">
+      <nav aria-label="Redes sociales">
+        <a href="https://github.com/KENDS1314" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+          </svg>
+        </a>
+        <a href="mailto:TU_CORREO@gmail.com" aria-label="Correo Gmail">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/>
+            <path d="M3 7.5 12 14l9-6.5"/>
+          </svg>
+        </a>
       </nav>
-    </article>
-  </header>
-
-  <section id="comentarios" class="panel">
-    <h2>Comentarios</h2>
-    <script src="https://giscus.app/client.js"
-      data-repo="KENDS1314/kends1314.github.io"
-      data-repo-id="R_kgDOVVO8qg"
-      data-category="General"
-      data-category-id="DIC_kwDOVVO8qs4DJd19"
-      data-mapping="pathname"
-      data-reactions-enabled="1"
-      data-input-position="top"
-      data-theme="transparent_dark"
-      data-lang="es"
-      crossorigin="anonymous"
-      async>
-    </script>
-  </section>
-
-  <section id="proyectos" class="panel">
-    <h2>Proyectos</h2>
-    <ul>
-      <li class="ep">
-        <div class="ep-cinta">
-          <span class="ep-num">EP.01</span>
-          <span>[web]</span>
-          <span class="ep-estado">en edición</span>
-        </div>
-        <a href="https://github.com/KENDS1314/nombre-repo">proyecto 1</a>
-        <p>pssss no leas aqui todavia </p>
-      </li>
-      <li class="ep">
-        <div class="ep-cinta">
-          <span class="ep-num">EP.02</span>
-          <span>[software]</span>
-          <span class="ep-estado">próximamente</span>
-        </div>
-        <a href="#proyectos">Otro proyecto</a>
-        <p>te dije que no msh</p>
-      </li>
-    </ul>
-  </section>
-
-  <section id="guias" class="panel">
-    <h2>Guías</h2>
-
-    <details>
-      <summary>Titulo de guia</summary>
-      <ol>
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
-      </ol>
-    </details>
-
-    <details>
-      <summary>Título de otra guía</summary>
-      <ol>
-        <li>Paso uno.</li>
-        <li>Paso dos.</li>
-        <li>Paso tres.</li>
-      </ol>
-    </details>
-  </section>
-
-  <footer class="redes">
-    <nav aria-label="Redes sociales">
-      <a href="https://github.com/KENDS1314" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-        <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
-          <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
-        </svg>
-      </a>
-      <a href="mailto:TU_CORREO@gmail.com" aria-label="Correo Gmail">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/>
-          <path d="M3 7.5 12 14l9-6.5"/>
-        </svg>
-      </a>
-    </nav>
-  </footer>
+    </footer>
+  </main>
 
 </body>
 </html>
