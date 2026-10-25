@@ -19,20 +19,39 @@
 html {
   interpolate-size: allow-keywords;
   scroll-behavior: smooth;
-  /* El fondo se pinta en el canvas del documento con attachment fijo:
-     Chrome Android lo dibuja en el espacio de la pantalla, así que no se
-     desplaza ni se reescala cuando la barra de direcciones aparece/desaparece
-     (una capa position: fixed sí lo hace, porque Chrome la anima con la barra). */
+  /* El documento NO scrollea (bloqueado aquí y en body). Si el scroll del
+     documento no se mueve, Chrome Android nunca colapsa la barra de
+     direcciones, y sin colapso no hay cambio de viewport: el fondo queda
+     absolutamente quieto. El scroll real lo hace .contenido. */
+  height: 100%;
+  overflow: hidden;
+  /* El fondo se pinta en el canvas del documento y no depende del scroll. */
   background: var(--negro) url('../fotos/fondo.png') center center / cover no-repeat fixed;
 }
 
 body {
   margin: 0;
+  height: 100%;
+  overflow: hidden;
   /* Transparente a propósito: cualquier color aquí taparía el canvas de html,
      que es donde vive la imagen de fondo. */
   background: transparent;
   color: var(--plata);
   font-family: 'Courier New', monospace;
+}
+
+/* Contenedor con el scroll real de la página. Al no scrollear el documento,
+   la barra de direcciones de Chrome Android no se colapsa y el viewport
+   mantiene su tamaño: el fondo no se mueve ni se reescala. */
+.contenido {
+  height: 100vh;   /* respaldo para navegadores sin viewport units dinámicas */
+  height: 100dvh;  /* alto visible actual */
+  height: 100svh;  /* estable: no cambia si la barra de direcciones se oculta */
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
 }
 
 /* iOS Safari ignora background-attachment: fixed (lo trata como scroll),
@@ -343,5 +362,5 @@ body.cargando { overflow: hidden; }
   h1, .rec::before, .ep-estado::before { animation: none; }
   #crt { display: none; }
   .panel { transition: none; }
-  html { scroll-behavior: auto; }
+  html, .contenido { scroll-behavior: auto; }
 }
