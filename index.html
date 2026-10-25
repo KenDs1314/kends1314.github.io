@@ -192,18 +192,6 @@
         visibility .5s;
     }
 
-    .panel:target {
-      height: auto;
-      visibility: visible;
-      opacity: 1;
-      filter: none;
-      margin: 0 auto 16px;
-      padding: 24px;
-      border-top-width: 2px;
-      border-bottom-width: 2px;
-      box-shadow: 0 0 18px var(--violeta);
-    }
-
     .panel h2 {
       margin-top: 0;
       color: var(--verde);
@@ -452,32 +440,5 @@
     </nav>
   </footer>
 
-  <script>
-    const el = document.getElementById('tiempo');
-    const inicio = Date.now();
-    /** @param {number} n */
-    const p = n => String(n).padStart(2, '0');
-    setInterval(() => {
-      const s = Math.floor((Date.now() - inicio) / 1000);
-      el.textContent = `${p(Math.floor(s / 3600))}:${p(Math.floor(s / 60) % 60)}:${p(s % 60)}`;
-    }, 1000);
-
-    const crt = document.getElementById('crt');
-    /** @param {number} ms */
-    const esperar = ms => new Promise(r => setTimeout(r, ms));
-    const cargada = new Promise(r => {
-      if (document.readyState === 'complete') r();
-      else window.addEventListener('load', r, { once: true });
-    });
-
-    Promise.race([
-      Promise.all([esperar(800), cargada, document.fonts.ready]),
-      esperar(6000)
-    ]).then(() => {
-      crt.classList.add('listo');
-      document.body.classList.remove('cargando');
-      setTimeout(() => crt.remove(), 400);
-    });
-  </script>
 </body>
 </html>
